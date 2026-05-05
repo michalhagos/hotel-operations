@@ -15,7 +15,7 @@ public class Room {
         this.isOccupied = isOccupied;
         this.isDirty = isDirty;
     }
-// create getters and setters
+// create getters and
 
     public int getNumberOfBeds() {
         return numberOfBeds;
@@ -33,9 +33,39 @@ public class Room {
         return isDirty;
 
     }
-// this is a calculated getter which checks if the room is available if it is not occupied or dirty
+
+    // this is a calculated getter which checks if the room is available if it is not occupied or dirty
     public boolean isAvailable() {
         return !this.isDirty() && !this.isOccupied();
 
     }
+
+    public void checkIn() {
+        this.isOccupied = true;
+        this.isDirty = true;
+    }
+
+    public void cleanRoom() {
+        this.isDirty = false;
+
+    }
+
+    public void checkOut() {
+        this.cleanRoom();
+        this.isOccupied = false;
+
+
+    }
+
+
 }
+// public boolean isAvailable() {
+//    if (!this.isDirty() && !this.isOccupied()){
+//    return true;
+
+//    }
+// return false;
+//
+//    }
+//
+//
