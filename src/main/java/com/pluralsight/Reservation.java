@@ -1,25 +1,28 @@
 package com.pluralsight;
 
+// create reservation class
 public class Reservation {
-
-    public String RoomType;
+ // write  the properties of the class
+    public String roomType;
 
     public int numberOfNights;
 
     public boolean isWeekend;
 
+    // create a constructor
     public Reservation(String roomType, int numberOfNights, boolean isWeekend) {
-        RoomType = roomType;
+        this.roomType = roomType;
         this.numberOfNights = numberOfNights;
         this.isWeekend = isWeekend;
     }
 
+    // create setters and getters
     public String getRoomType() {
-        return RoomType;
+        return roomType;
     }
 
     public void setRoomType(String roomType) {
-        RoomType = roomType;
+        this.roomType = roomType;
     }
 
     public int getNumberOfNights() {
@@ -37,13 +40,27 @@ public class Reservation {
     public void setWeekend(boolean weekend) {
         isWeekend = weekend;
     }
+// calculate the price using an if statement
+    public double getPrice() {
+        double basePrice;
+        if (this.getRoomType().equalsIgnoreCase("King")) {
+            basePrice = 139.00;
+        } else {
+            basePrice = 124.00;
 
-    public double getPrice () {
-       //if (this.getRoomType()==);
+        }
+        if (isWeekend) {
+
+            basePrice = basePrice + (basePrice * 0.1);
+        }
+        return basePrice;
 
 
     }
+// calculate the total by multiplying the base price with the number of nights
+    public double getReservationTotal() {
+        return this.getPrice() * this.numberOfNights;
 
-
+    }
 }
 
