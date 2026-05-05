@@ -1,11 +1,14 @@
 package com.pluralsight;
 
+// create an Employee Class
 public class Employee {
-  public int  employeeId;
-  public String  name;
-  public String  department;
-  public double  payRate;
-   public double hoursWorked;
+    private int employeeId;
+    private String name;
+    private String department;
+    private double payRate;
+    private double hoursWorked;
+
+// create a constructor
 
     public Employee(int employeeId, String name, String department, double payRate, double hoursWorked) {
         this.employeeId = employeeId;
@@ -14,6 +17,7 @@ public class Employee {
         this.payRate = payRate;
         this.hoursWorked = hoursWorked;
     }
+// create getters and setters
 
     public int getEmployeeId() {
         return employeeId;
@@ -56,6 +60,26 @@ public class Employee {
     }
 
 
+    // getRegularHours() getting the regular hours
+    public double getRegularHours() {
+        if (hoursWorked <= 40) {
+            return hoursWorked;
+        } else {
+            return 40;
+        }
+    }
 
+    // getOvertimeHours() calculates the overtime hours by subtracting from 40
+    public double getOvertimeHours() {
+        if (hoursWorked > 40) {
+            return hoursWorked - 40;
+        } else {
+            return 0;
+        }
+    }
 
+    // calculate the total pay
+    public double getTotalPay() {
+        return (getRegularHours() * payRate) + (getOvertimeHours() * payRate * 1.5);
+    }
 }
