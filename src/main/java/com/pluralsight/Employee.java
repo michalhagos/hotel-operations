@@ -92,6 +92,7 @@ public class Employee {
 // exercise 2 // punch in method
     public void punchIn(int time ){
       this.punchInTime = time;
+        System.out.println(this.name + " punched in at " + time + ":00");
     }
 
     // figure out the difference between the punch out and in time and to add that to employees hours worked
@@ -102,6 +103,7 @@ public class Employee {
 
         // adding the hours worked to the calculated current hours worked
         this.hoursWorked += currentHoursWorked;
+        System.out.println(this.name + " punched out at " + time + ":00 — worked " + currentHoursWorked + " hrs. Total: " + this.hoursWorked);
     }
 
     public void punchTimeCard(int start, int endTime){

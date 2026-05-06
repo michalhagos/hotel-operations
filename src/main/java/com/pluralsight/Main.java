@@ -10,5 +10,19 @@ public class Main {
 
         Employee employee1 = new Employee(1, "Nobel", "Front Desk", 55.00, 45);
         System.out.println("Total Pay: " + String.format("%.2f",employee1.getTotalPay()));
+
+
+        // Option 1: manual times (for testing) . 8 hours added
+        employee1.punchIn(9);
+        employee1.punchOut(17);
+
+// Option 2: real clock (would use the current hour right now) . grabs LocalTime.now() automatically
+        employee1.punchIn();
+        employee1.punchOut();
+
+// Option 3: bonus — one call does both , 4 hours added in one line
+        employee1.punchTimeCard(10, 14);
+
+
     }
 }
