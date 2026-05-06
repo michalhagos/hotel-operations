@@ -41,7 +41,7 @@ public class Reservation {
         isWeekend = weekend;
     }
 
-    // this are my derived or calculated getters
+    // this is my derived or calculated getters
 // calculate the price using an if statement
     public double getPrice() {
         double basePrice;
