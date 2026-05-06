@@ -1,5 +1,7 @@
 package com.pluralsight;
 
+import java.time.LocalTime;
+
 // create an Employee Class
 public class Employee {
     private int employeeId;
@@ -87,16 +89,40 @@ public class Employee {
         return (getRegularHours() * payRate) + (getOvertimeHours() * payRate * 1.5);
     }
 
-
+// exercise 2 // punch in method
     public void punchIn(int time ){
       this.punchInTime = time;
     }
 
-    // figure out the differenc between the punch out and in time and to add that to employees hours worked
-    public void punchOut(int time ){
-        //this.punchOutTime = time;
+    // figure out the difference between the punch out and in time and to add that to employees hours worked
+    public void punchOut(int time){
 
+        //this helps to get the hours worked based on the punch in and punch out times
+        int currentHoursWorked = time - this.punchInTime;
 
+        // adding the hours worked to the calculated current hours worked
+        this.hoursWorked += currentHoursWorked;
+    }
+
+    public void punchTimeCard(int start, int endTime){
+        this.punchIn(start);
+        this.punchOut(endTime);
+    }
+
+    public void punchIn() {
+        //get the current time
+        LocalTime currentTime = LocalTime.now();
+        int currentHour = currentTime.getHour();
+        //punch in with the hour
+        this.punchIn(currentHour);
+    }
+
+    public void punchOut() {
+        //get the current time
+        LocalTime currentTime = LocalTime.now();
+        int currentHour = currentTime.getHour();
+        //punch in with the hour
+        this.punchOut(currentHour);
     }
 
 
