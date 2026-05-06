@@ -50,6 +50,15 @@ public class Hotel {
     // a method that calculates the available suites by subtracting the number of suites to the booked ones
 public int getAvailableSuites() {
     return numberOfSuites - bookedSuites;
-}
+
+}// a method that calculates the available rooms by subtracting the number of rooms to the booked rooms
+    public int getAvailableRooms() {
+        return numberOfRooms - bookedBasicRooms;
+    }
+
+
+
+
+
 
 }
