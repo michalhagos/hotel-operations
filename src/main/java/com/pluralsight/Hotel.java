@@ -47,6 +47,9 @@ public class Hotel {
         return bookedBasicRooms;
     }
 //  derived getter or calculated ones
-
+    // a method that calculates the available suites by subtracting the number of suites to the booked ones
+public int getAvailableSuites() {
+    return numberOfSuites - bookedSuites;
+}
 
 }
