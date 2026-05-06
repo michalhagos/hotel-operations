@@ -48,4 +48,5 @@ public class Hotel {
     }
 //  derived getter or calculated ones
 
+
 }
