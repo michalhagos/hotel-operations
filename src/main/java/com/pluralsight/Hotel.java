@@ -56,7 +56,37 @@ public int getAvailableSuites() {
         return numberOfRooms - bookedBasicRooms;
     }
 
+    // create a bookRoom method that takes two parameters the number of rooms requested and a boolean that checks if they chose a suite
+    public boolean bookRoom(int numberOfRoomsRequested, boolean isSuite) {
 
+        // checking  which type of room the guest wants
+        if (isSuite) {
+
+            // check if we have enough suites available
+            if (getAvailableSuites() >= numberOfRoomsRequested) {
+                // add the requested rooms to the booked suites count
+                bookedSuites += numberOfRoomsRequested;
+                // return true as the booking was successful because it passed the if statement
+                return true;
+            } else {
+                // this means not enough suites available, booking failed
+                return false;
+            }
+
+        } else {
+
+            // check if we have enough basic rooms available
+            if (getAvailableRooms() >= numberOfRoomsRequested) {
+                // add the requested rooms to the booked basic rooms count
+                bookedBasicRooms += numberOfRoomsRequested;
+                //  return true as the booking was successful because it passed the if statement
+                return true;
+            } else {
+                // not enough basic rooms available, booking failed
+                return false;
+            }
+        }
+    }
 
 
 
