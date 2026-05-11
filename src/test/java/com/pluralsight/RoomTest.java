@@ -106,6 +106,15 @@ class RoomTest {
         assertFalse(room.isDirty());
     }
 
+    @Test
+    public void cleanRoom_should_keepRoomOccupied_whenRoomIsCleaned() {
+        // arrange
+        Room room = new Room(2, 129.00, true, true);
+        // act
+        room.cleanRoom();
+        // assert
+        assertTrue(room.isOccupied());
+    }
 
 
 
