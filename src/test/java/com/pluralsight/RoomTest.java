@@ -45,6 +45,15 @@ class RoomTest {
         // assert
         assertTrue(room.isOccupied());
     }
+    @Test
+    public void checkIn_should_stillBeDirty_whenRoomIsDirty() {
+        // arrange
+        Room room = new Room(2, 139.99, false, true);
+        // act
+        room.checkIn();
+        // assert
+        assertTrue(room.isDirty());
+    }
 
 
 
