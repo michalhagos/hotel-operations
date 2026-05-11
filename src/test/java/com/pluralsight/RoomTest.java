@@ -26,7 +26,15 @@ class RoomTest {
         assertTrue(room.isDirty());
     }
 
-
+    @Test
+    public void checkIn_should_makeRoomUnavailable() {
+        // arrange
+        Room room = new Room(2, 149.99, false, false);
+        // act
+        room.checkIn();
+        // assert
+        assertFalse(room.isAvailable());
+    }
 
 
 
