@@ -32,6 +32,17 @@ class EmployeeTest {
         assertEquals(expectedHours, employee.getHoursWorked());
     }
 
+    @Test
+    public void punchOut_should_calculateCorrectly_forShortShift() {
+        // arrange
+        Employee employee = new Employee(1, "Nobel", "Front Desk", 55.00, 0);
+        int expectedHours = 4;
+        // act
+        employee.punchIn(8);
+        employee.punchOut(12);
+        // assert
+        assertEquals(expectedHours, employee.getHoursWorked());
+    }
 
 
 
