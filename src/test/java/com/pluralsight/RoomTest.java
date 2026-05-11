@@ -59,7 +59,7 @@ class RoomTest {
     @Test
     public void checkOut_should_markRoomNotOccupied() {
         // arrange
-        Room room = new Room(2, 149.99, true, true);
+        Room room = new Room(2, 159.99, true, true);
         // act
         room.checkOut();
         // assert
@@ -69,17 +69,22 @@ class RoomTest {
     @Test
     public void checkOut_should_markRoomClean() {
         // arrange
-        Room room = new Room(2, 149.99, true, true);
+        Room room = new Room(3, 149.00, true, true);
         // act
         room.checkOut();
         // assert
         assertFalse(room.isDirty());
     }
 
-
-
-
-
+    @Test
+    public void checkOut_should_makeRoomAvailable() {
+        // arrange
+        Room room = new Room(3, 149.00, true, true);
+        // act
+        room.checkOut();
+        // assert
+        assertTrue(room.isAvailable());
+    }
 
 
 
