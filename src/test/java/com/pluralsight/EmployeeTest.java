@@ -45,23 +45,17 @@ class EmployeeTest {
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    @Test
+    public void punchOut_should_addToExistingHours() {
+        // arrange
+        Employee employee = new Employee(1, "Nobel", "Front Desk", 55.00, 40);
+        double expectedHours = 48;
+        // act
+        employee.punchIn(9);
+        employee.punchOut(17);
+        // assert
+        assertEquals(expectedHours, employee.getHoursWorked());
+    }
 
 
 
