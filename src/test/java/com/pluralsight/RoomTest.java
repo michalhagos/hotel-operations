@@ -36,7 +36,15 @@ class RoomTest {
         assertFalse(room.isAvailable());
     }
 
-
+    @Test
+    public void checkIn_should_stillBeOccupied_whenAlreadyOccupied() {
+        // arrange
+        Room room = new Room(2, 139.99, true, true);
+        // act
+        room.checkIn();
+        // assert
+        assertTrue(room.isOccupied());
+    }
 
 
 
