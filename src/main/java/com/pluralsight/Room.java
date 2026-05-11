@@ -1,7 +1,7 @@
 package com.pluralsight;
 
 // create a room Class
-public class Room {
+public class  Room {
     // create the fields or properties of the class
     private int numberOfBeds;
     private double price;

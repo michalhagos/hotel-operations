@@ -25,7 +25,7 @@ public class Hotel {
         this.bookedSuites = bookedSuites;
         this.bookedBasicRooms = bookedBasicRooms;
     }
-    // --- Getters only, no setters needed because we don't need to update
+    //Getters only, no setters needed because we don't need to update
 
     public String getName() {
         return name;
@@ -67,6 +67,7 @@ public int getAvailableSuites() {
                 // add the requested rooms to the booked suites count
                 bookedSuites += numberOfRoomsRequested;
                 // return true as the booking was successful because it passed the if statement
+                System.out.println("Dear guest you are now booked to your suite Successfully");
                 return true;
             } else {
                 // this means not enough suites available, booking failed
@@ -80,6 +81,7 @@ public int getAvailableSuites() {
                 // add the requested rooms to the booked basic rooms count
                 bookedBasicRooms += numberOfRoomsRequested;
                 //  return true as the booking was successful because it passed the if statement
+                System.out.println("Dear guest you are now booked to your room Successfully");
                 return true;
             } else {
                 // not enough basic rooms available, booking failed

@@ -23,6 +23,9 @@ public class Main {
 // Option 3: bonus — one call does both , 4 hours added in one line
         employee1.punchTimeCard(10, 14);
 
+Hotel hotel1 = new Hotel("Grand Plaza",10,5,3,2);
+boolean isBookingSuccessful= hotel1.bookRoom(1,true);
+        System.out.println(isBookingSuccessful);
 
     }
 }

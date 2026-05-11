@@ -114,6 +114,8 @@ public class Employee {
     public void punchIn() {
         //get the current time
         LocalTime currentTime = LocalTime.now();
+        // get our is internal method is built in method in the local time class
+
         int currentHour = currentTime.getHour();
         //punch in with the hour
         this.punchIn(currentHour);
@@ -126,10 +128,6 @@ public class Employee {
         //punch in with the hour
         this.punchOut(currentHour);
     }
-
-
-
-
 
 
 
